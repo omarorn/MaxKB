@@ -1,0 +1,16 @@
+[project]
+name = "MaxKB"
+
+[plugins]
+  [plugins.python]
+    build = "pip install -r requirements.txt"
+    start = "python main.py"
+
+[deploy]
+  [[deploy.services]]
+    name = "maxkb-service"
+    start = "python main.py"
+    [deploy.services.env]
+      # Add your environment variables here
+      ENV_VAR_1 = "value1"
+      ENV_VAR_2 = "value2"
