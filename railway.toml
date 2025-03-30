@@ -7,10 +7,23 @@ name = "MaxKB"
     start = "python main.py"
 
 [deploy]
+      OPENAI_API_KEY = "${{shared.OPENAI_API_KEY}}"
+      AIRTABLE_API_KEY = "${{shared.AIRTABLE_API_KEY}}"
+      DATABASE_URL = "${{Postgres-hu8_.DATABASE_URL}}"
+      OPENAI_API_KEY = "your_openai_api_key"
+      AIRTABLE_API_KEY = "your_airtable_api_key"
+      DATABASE_URL = "your_postgres_database_url"
   [[deploy.services]]
     name = "maxkb-service"
     start = "python main.py"
     [deploy.services.env]
       # Add your environment variables here
-      ENV_VAR_1 = "value1"
-      ENV_VAR_2 = "value2"
+      AIRTABLE_API_KEY="${{shared.AIRTABLE_API_KEY}}"
+ANTHROPIC_API_KEY="${{shared.ANTHROPIC_API_KEY}}"
+DATABASE_PRIVATE_URL="${{Postgres-hu8_.DATABASE_PRIVATE_URL}}"
+DATABASE_URL="${{Postgres-hu8_.DATABASE_URL}}"
+dev21_api_key="${{shared.dev21_api_key}}"
+elevenlabsapikey="${{shared.elevenlabsapikey}}"
+grok="${{shared.grok}}"
+OPENAI_API_KEY="${{shared.OPENAI_API_KEY}}"
+PGHOST="${{Postgres.PGHOST}}"
