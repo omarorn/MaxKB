@@ -15,6 +15,7 @@ RUN apt-get update && \
     apt-get clean all  && \
     rm -rf /var/lib/apt/lists/*
 
+COPY README.md /app/README.md
 COPY . /opt/maxkb/app
 RUN mkdir -p /opt/maxkb/app /opt/maxkb/model /opt/maxkb/conf && \
     rm -rf /opt/maxkb/app/ui
